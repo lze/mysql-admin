@@ -1,0 +1,69 @@
+---
+abstract: 'Just a MySQL administration Web-App'
+author:
+  - 'Dirk Lindner <dirk.lze@gmail.com>'
+  - 'Dirk Lindner <lze@cpan.org>'
+build_requires: {}
+configure_requires:
+  Module::Build: 0.40
+dynamic_config: 1
+generated_by: 'Module::Build version 0.4003, CPAN::Meta::Converter version 2.133380'
+license: open_source
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: MySQL-Admin
+provides:
+  DBI::Library:
+    file: lib/DBI/Library.pm
+    version: 0.86
+  DBI::Library::Database:
+    file: lib/DBI/Library/Database.pm
+    version: 0.86
+  DBI::Library::Database::db:
+    file: lib/DBI/Library/Database.pm
+  DBI::Library::Database::st:
+    file: lib/DBI/Library/Database.pm
+  DBI::Library::db:
+    file: lib/DBI/Library.pm
+  DBI::Library::st:
+    file: lib/DBI/Library.pm
+  HTML::Menu::Pages:
+    file: lib/HTML/Menu/Pages.pm
+    version: 0.86
+  MySQL::Admin:
+    file: lib/MySQL/Admin.pm
+    version: 0.86
+  MySQL::Admin::Actions:
+    file: lib/MySQL/Admin/Actions.pm
+    version: 0.86
+  MySQL::Admin::Config:
+    file: lib/MySQL/Admin/Config.pm
+    version: 0.86
+  MySQL::Admin::GUI:
+    file: lib/MySQL/Admin/GUI.pm
+    version: 0.86
+  MySQL::Admin::Session:
+    file: lib/MySQL/Admin/Session.pm
+    version: 0.86
+  MySQL::Admin::Settings:
+    file: lib/MySQL/Admin/Settings.pm
+    version: 0.86
+  MySQL::Admin::Translate:
+    file: lib/MySQL/Admin/Translate.pm
+    version: 0.86
+  Template::Quick:
+    file: lib/Template/Quick.pm
+    version: 0.86
+recommends:
+  Authen::Captcha: 1.024
+requires:
+  CGI: 3.48
+  DBI: 1.50
+  MD5: 2.03
+  Module::Build: 0.2808
+  Test::More: 0.7
+  URI: 1.40
+resources:
+  license: http://opensource.org/licenses/lgpl-license.php
+version: 0.86
