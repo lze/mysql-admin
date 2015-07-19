@@ -1,2 +1,109 @@
 # mysql-admin
-MySQL-Admin
+MySQL::Admin version 0.85
+
+Just a MySQL Administration Web-App.
+
+I think you are coding Perl or you would use phpMyAdmin.
+For one Person it is impossible to write a large project like phpMyAdmin.
+So help is welcome. 
+
+
+This System works like following:
+
+index.html
+	<!-- load the default pag via javascript  -->
+	<body onload="init()">
+
+/*
+#############################################
+#  .window		                    #
+#  #######################################  #
+#  #.tab	                         #  #   
+#  #######################################  #
+#  #.menu                  #.content     #  #
+#  # ##################### #             #  # 
+#  # #.menuContainer     # #             #  #
+#  # #.verticalMenuLayout# #.ShowTables  #  #
+#  # #.menuCaption       # #.caption     #  #
+#  # #.menuContent       # #             #  #
+#  # ##################### #             #  #
+#  #                       #             #  #
+#  #######################################  #
+#                                           #
+#############################################
+*/
+	
+javascript/mysql_admin.js
+	
+	  // In the  function init() a ( xmlhttprequest ) load the Content.
+	  // requestURI('$ENV{SCRIPT_NAME}?action=logout','logout','logout')";         
+	  requestURI(
+	    url,     // Script url  
+	    id,      // Tabwidget id
+	    txt,     // Tabwidget text
+	    bHistory,// Browser History
+	    formData,// Form Data 
+	    method,  // Submit Type GET or POST
+	    bWaid    // progress bar ?
+	   );
+	or 
+	<form onsubmit="submitForm(this,'$m_sAction','$m_sTitle');return false;" method="GET" enctype="multipart/form-data">
+	<input type="hidden" name="action" value="">
+	// since apache 2.x GET have mayrequestline so it use POST for big forms. POST will not save in the history.  
+
+cgi-bin/mysql-pl
+        Returns a “actionset” stored in the Mysql Database.
+	One sub for every output id.
+	<xml>
+	<output id="foo">bar</output>
+	<output id="bar">foo</output>
+	</xml>
+index.html
+	//result
+	<div id=”foo”>bar</div>
+	<div id=”bar”>foo</div>
+
+Under mod_perl the whole page load in 0.1 seconds.
+
+I write a whole Documentation soon.No feedback so I'm not in rush.
+
+
+
+Look at http://lindnerei.sourceforge.net for further Details.
+
+INSTALLATION
+
+To install this module type the following:
+
+perl Build.PL
+  ./Build
+  ./Build test
+  ./Build install
+  ./Build testdb
+
+DEPENDENCIES
+
+This module requires these other modules and libaries:
+  Test::More >= 0.7,
+  Module::Build >= 0.2808,
+  HTML::Menu::TreeView >= 1.04,
+  DBI >= 1.50,
+  CGI >= 3.29,
+  MD5 >= 2.03,
+  URI >= 1.40
+recommends
+  Authen::Captcha 
+  1.024
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2006-2015 by Hr. Dirk Lindner
+
+perl -e'sub lze_Rocks{print/(...)/ for shift;}sub{&{"@_"}}->("lze_Rocks")'
+
+This program is free software; you can redistribute it and/or modify it 
+under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation; This program is distributed in the hope 
+that it will be useful, but WITHOUT ANY WARRANTY; without even
+the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+See the GNU Lesser General Public License for more details.
